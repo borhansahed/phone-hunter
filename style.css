@@ -3,5 +3,25 @@
     padding: 0;
     box-sizing: border-box;
 }
+body{
+   background-color:#032c62!important;
+}
+h1{
+    text-shadow:  2px 4px #000000;
+}
 
- 
+
+ input{
+     max-width: 400px;
+    
+ }
+ #card-container{
+     margin: 0px auto;
+     max-width: 1400px;
+ }
+ .phone-card{
+     
+ }
+ .phone-card img {
+     width: 20vh;
+ }
