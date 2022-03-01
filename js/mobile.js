@@ -1,4 +1,7 @@
-const searchMobileText = () => {
+  
+  
+  
+  const searchMobileText = () => {
 const searchInput = document.getElementById('search-input');const searchText = searchInput.value;
 
 // searchInput.value ='';
