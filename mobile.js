@@ -22,7 +22,7 @@ const displayMobile = phones => {
           <div class="card-body ms-3">
             <h5 class="card-title">${items.brand}</h5>
            <h6>${items.phone_name}</h6>
-           <button onclick="searchPhoneDetails('${items.slug}')" class="btn btn-outline-secondary">Show More</button>
+           <button onclick="searchPhoneDetails('${items.slug}')" class="btn btn-outline-secondary" data-bs-toggle="modal"  data-bs-target="#mymodal">Show More</button>
           </div>
         </div>
       </div>
@@ -42,9 +42,11 @@ const searchPhoneDetails = id => {
 }
 
 const displayPhoneDetails = phone => {
-  console.log(phone)
-  for(const item in phone){
-    console.log(item)
-  }
+  
+ console.log(phone)
+ console.log(phone.mainFeatures.sensors)
+//  for(const sensors of  ){
+//    console.log(sensors)
+//  }
  
 }

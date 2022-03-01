@@ -30,6 +30,10 @@ h1{
      width: 20vh;
      border-radius: 2.6vh;
  }
+ .modal-container{
+    
+     max-width:80vh!important;
+ }
  footer{
      
      /* margin: 600px 0px 0px 0px; */
