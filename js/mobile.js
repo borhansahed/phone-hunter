@@ -28,6 +28,7 @@ const displayFoundingResults = results => {
 const searchText = searchInput.value;
 
 searchInput.value ='';
+div.textContent='';
 newModalDiv.textContent='';
 phoneDetailsFooter.innerHTML='';
 
@@ -45,7 +46,7 @@ const displayMobile = phones => {
   return displayFoundingResults('block');
 }
    displayFoundingResults('none')
-   div.textContent='';
+   
     phones.forEach(items => {
       
         const CardDiv = document.createElement('div')
@@ -75,6 +76,8 @@ showMoreButtonDiv.classList.add('show-more')
      <div class=" " >
 
      <button class=" btn btn-outline-secondary text-center">Show More</button>
+
+ 
      </div>
     
      `
@@ -83,9 +86,10 @@ showMoreButtonDiv.classList.add('show-more')
 const footer = document.createElement('div');
 footer.classList.add('footer-text')
     footer.innerHTML =`
-    <footer class="text-white ">
-    <p class="fs-bold">Copyright&copy;1995-2022 MOBILE HOUSE All Rights Reserved.</p>
- </footer>
+   <footer class="text-white ">
+    <p class="fs-bold mx-auto">Copyright&copy;1995-2022 MOBILE HOUSE All Rights Reserved.</p>
+   </footer>
+
     
      `
      div.appendChild(footer);
@@ -116,7 +120,7 @@ const displayPhoneDetails = phone => {
   newModalDiv.classList.add('phone-details')
   
   newModalDiv.innerHTML=
-  ` <div class="row  d-flex  align-items-center   bg-dark shadow-lg text-white ">
+  ` <div class="row  row-cols-1 row-cols-md-2 row-cols-lg-2  d-flex justify-content-center align-items-center bg-dark shadow-lg text-white ">
               <div class="col-5 ">
                <h4 class="card-title ms-4 fw-bold"> ${phone.brand}    ${phone.name }</h4>
                <hr>
@@ -139,16 +143,16 @@ const displayPhoneDetails = phone => {
                  <h5 class="fw-bold"> Specifications </h5>
                  <hr> 
                  <p>.<span>Storage</span> : ${features.storage}</p>
-                 <p>.Chipset : ${features.chipSet} </p>
+                 <p><span>.Chipset</span> : ${features.chipSet} </p>
                  <p><span>.DisplaySize :</span> ${features.displaySize}</p>
                  <p><span>.Memory :</span> ${features.memory}</p>
-                 <p><span>.sensors</span> : ${features.sensors}</p>
-                 <p>.Bluetooh : ${phone.others?.Bluetooth ?phone.others.Bluetooth:'No'}</p>
-                 <p>.GPS : ${phone.others?.GPS ?phone.others.GPS:'No' }</p>
-                 <p>.USB : ${phone.others?.USB ?phone.others.USB:'No'}</p>
-                 <p>.Radio : ${phone.others?.Radio ? phone.others.Radio:'No'}</p>
-                 <p>.NFC : ${phone.others?.NFC ?phone.others.NFC:'No'}</p>
-                 <p>.WLAN : ${phone.others?.WLAN ?phone.others.WLAN:'No'}</p>
+                 <p><span>.Sensors</span> : ${features.sensors}</p>
+                 <p><span>.Bluetooh</span> : ${phone.others?.Bluetooth ?phone.others.Bluetooth:'No'}</p>
+                 <p><span>.GPS</span> : ${phone.others?.GPS ?phone.others.GPS:'No' }</p>
+                 <p><span>.USB</span> : ${phone.others?.USB ?phone.others.USB:'No'}</p>
+                 <p><span>.Radio</span> : ${phone.others?.Radio ? phone.others.Radio:'No'}</p>
+                 <p><span>.NFC</span> : ${phone.others?.NFC ?phone.others.NFC:'No'}</p>
+                 <p><span>.WLAN</span> : ${phone.others?.WLAN ?phone.others.WLAN:'No'}</p>
                     
                  
                 

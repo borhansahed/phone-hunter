@@ -39,7 +39,8 @@ h1{
  }
  /* show more button  */
  .show-more{
-     margin:  0px 10vh;
+     
+     margin: 2px 10vh;
  }
  .phone-details  img {
      width: 28vh;
@@ -62,8 +63,8 @@ h1{
      
  }
  .phone-details span{
-     font-size: 18px;
-     font-weight: 450;
+     font-size: 17px;
+     font-weight: 500;
  }
 
     
@@ -72,7 +73,7 @@ h1{
  
   footer{
      
-     margin: 100px 0px 0px 0px;
+     margin: 130px auto 10px auto ;
      /* top: 100px;; */
      
      /* text-align: center;  */
@@ -116,12 +117,52 @@ h1{
        font-size: 13px;
        margin-left: 20px;
     }
-  .phone-card h5 , h6 , button{
+  .phone-card h5 , h6{
       margin-left: 20px;
      
   }
+  /* .phone-details-container{
+      display: flex;
+      flex-direction:column;
+   align-items: center;
+   
+   } */
+   .phone-details  img {
+    width: 20vh;
+    border-radius:3vh;}
+    
+  .phone-details {
+    
+    width: 600px;
+    
+ 
+   
+    }
+    .phone-details button{
+        font-size: 14px;
+    }
+    .phone-details h4{
+        font-size: 19px;
+    }
+    .phone-details h5{
+        font-size: 17px;
+    }
+    .phone-details p{
+        font-size: 14px;
+        line-height: 2.4vh;
+        
+    }
+    .phone-details span{
+        font-size: 15px;
+        font-weight: 600;
+    }
+
   footer{
       font-size: 14px;
+  }
+  hr{
+      max-width: 150px;
+      margin: 0px auto;
   }
 
  }
