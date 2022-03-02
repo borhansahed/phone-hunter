@@ -52,10 +52,10 @@ const displayMobile = phones => {
         const CardDiv = document.createElement('div')
         CardDiv.classList.add('phone-card')
         CardDiv.innerHTML=`
-        <div class="col  w-75   mx-auto ">
+        <div class="col  mx-auto mb-2">
          <div class="card bg-dark shadow-lg text-white">
           <img src="${items.image}" class="card-img-top  mt-3 mx-auto " alt="...">
-          <div class="card-body ms-3">
+          <div class="card-body ms-5">
             <h5 class="card-title fw-bold">${items.phone_name}</h5>
            <h6 class="fw-bold">${items.brand}</h6>
            <button onclick="searchPhoneDetails('${items.slug}')" class="btn btn-outline-secondary" id="#modal-js">Show Details</button>
@@ -70,29 +70,29 @@ const displayMobile = phones => {
     })
     
 
-const showMoreButtonDiv = document.createElement('div');
-showMoreButtonDiv.classList.add('show-more')
-     showMoreButtonDiv.innerHTML =`
-     <div class=" " >
+// const showMoreButtonDiv = document.createElement('div');
+// showMoreButtonDiv.classList.add('show-more')
+//      showMoreButtonDiv.innerHTML =`
+//      <div class=" " >
 
-     <button class=" btn btn-outline-secondary text-center">Show More</button>
+//      <button class=" btn btn-outline-secondary text-center">Show More</button>
 
  
-     </div>
+//      </div>
     
-     `
-     div.appendChild(showMoreButtonDiv);
+//      `
+//      div.appendChild(showMoreButtonDiv);
      
-const footer = document.createElement('div');
-footer.classList.add('footer-text')
-    footer.innerHTML =`
-   <footer class="text-white ">
-    <p class="fs-bold mx-auto">Copyright&copy;1995-2022 MOBILE HOUSE All Rights Reserved.</p>
-   </footer>
+// const footer = document.createElement('div');
+// footer.classList.add('footer-text')
+//     footer.innerHTML =`
+//    <footer class="text-white ">
+//     <p class="fs-bold mx-auto">Copyright&copy;1995-2022 MOBILE HOUSE All Rights Reserved.</p>
+//    </footer>
 
     
-     `
-     div.appendChild(footer);
+//      `
+//      div.appendChild(footer);
      
 
 }
@@ -120,10 +120,11 @@ const displayPhoneDetails = phone => {
   newModalDiv.classList.add('phone-details')
   
   newModalDiv.innerHTML=
-  ` <div class="row  row-cols-1 row-cols-md-2 row-cols-lg-2  d-flex justify-content-center align-items-center bg-dark shadow-lg text-white ">
-              <div class="col-5 ">
-               <h4 class="card-title ms-4 fw-bold"> ${phone.brand}    ${phone.name }</h4>
-               <hr>
+  ` <div class="row  row-cols-1 row-cols-md-2 row-cols-lg-2 row-cols-xl-2   bg-dark shadow-lg text-white ">
+              <div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5 col-xxl-5  ">
+               <h4 class="card-title ms-4 fw-bold"> ${phone.brand}</h4>
+               <h4 class="card-title ms-4 fw-bold"> ${phone.name}</h4>
+           
                 <img src="${phone.image}" class="card-img-top  mt-3 ms-4 " alt="...">
                 <div class="card-body ms-3">
                  
@@ -134,10 +135,10 @@ const displayPhoneDetails = phone => {
                 </div>
             
               </div> 
-              <div class="col-md-7  text-white">
+              <div class="col-12  col-sm-12 col-md-7 col-lg-7 col-xl-7 col-xxl-7 text-white">
               
                 
-                <div class="card-body overflow-hidden ">
+                <div class=" card-body overflow-hidden ">
 
                
                  <h5 class="fw-bold"> Specifications </h5>

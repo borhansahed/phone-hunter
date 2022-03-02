@@ -22,10 +22,12 @@ h1{
  }
  
  #card-container  {
-     margin: 0px auto;
-     max-width: 1400px;
+     margin: 0px auto 30px auto;
+     max-width: 1200px;
  }
- 
+ .phone-card{
+     
+ }
 
  .phone-card img {
      width: 24vh;
@@ -49,10 +51,13 @@ h1{
      animation: drop 1.7s ease;
  }
  .phone-details {
-
-     margin: 0px auto;
     
-     max-width: 750px;
+     margin: 50px auto;
+    
+     max-width:800px;
+    
+     
+
     
  }
  .phone-details h6{
@@ -73,7 +78,7 @@ h1{
  
   footer{
      
-     margin: 130px auto 10px auto ;
+     margin: 60px auto 10px auto ;
      /* top: 100px;; */
      
      /* text-align: center;  */
@@ -97,15 +102,17 @@ h1{
 
  @media screen and (max-width:670px) {
 
- 
-    
+ header h1{
+     font-size: 22px;
+ }
      input{
-         max-width: 300px;
+         max-width: 220px;
      }
      #card-container  {
        
-        max-width: 400px;
+        max-width: 350px;
     }
+    
     .phone-card img {
         width: 14vh;
         border-radius:2.1vh;
@@ -115,27 +122,24 @@ h1{
     }
     .phone-card button{
        font-size: 13px;
-       margin-left: 20px;
+      margin-left: 8px;
     }
   .phone-card h5 , h6{
-      margin-left: 20px;
+      margin-left: 8px;
      
   }
-  /* .phone-details-container{
-      display: flex;
-      flex-direction:column;
-   align-items: center;
-   
-   } */
+  .phone-details-container{
+      margin: 0px auto;
+      max-width: 600px;
+   }
    .phone-details  img {
-    width: 20vh;
-    border-radius:3vh;}
+    width: 18vh;
+    border-radius:2.7vh;}
     
   .phone-details {
     
-    width: 600px;
-    
- 
+
+ max-width: 300px;
    
     }
     .phone-details button{
@@ -149,7 +153,7 @@ h1{
     }
     .phone-details p{
         font-size: 14px;
-        line-height: 2.4vh;
+        line-height: 2.5vh;
         
     }
     .phone-details span{
@@ -158,11 +162,17 @@ h1{
     }
 
   footer{
-      font-size: 14px;
+      margin: 0;
+      font-size: 12px;
   }
   hr{
       max-width: 150px;
       margin: 0px auto;
   }
+ 
+.show-more button{
+     font-size: 14px;
+
+}
 
  }
