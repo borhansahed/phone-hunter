@@ -10,6 +10,9 @@ h1{
     text-shadow:  2px 4px #000000;
 }
 
+#results{
+    display: none;
+}
 
  input{
      max-width: 400px;
