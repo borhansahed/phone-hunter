@@ -1,10 +1,27 @@
   
   
   
+  // show display mobile card 
+  const div = document.getElementById('card-container');
+  
+  
+  // player details div
+    const modalDiv =document.getElementById('modal-js')
+  // player details create div
+ const newModalDiv =document.createElement('div')
+
+
+
+
+
+
+  
   const searchMobileText = () => {
 const searchInput = document.getElementById('search-input');const searchText = searchInput.value;
 
 searchInput.value ='';
+newModalDiv.textContent='';
+
 
 const url = `https://openapi.programming-hero.com/api/phones?search=${searchText}`;
 
@@ -16,15 +33,16 @@ fetch(url)
 const displayMobile = phones => {
   console.log(phones)
  if(!phones[0]){
-  return alert('not found');}
-   const div = document.getElementById('card-container');
+  return alert('not found');
+}
+   
    div.textContent='';
     phones.forEach(items => {
       
         const CardDiv = document.createElement('div')
         CardDiv.classList.add('phone-card')
         CardDiv.innerHTML=`
-        <div class="col  w-75 h-100  mx-auto">
+        <div class="col  w-75 h-100  mx-auto bg-dark">
          <div class="card bg-dark shadow-lg text-white">
           <img src="${items.image}" class="card-img-top  mt-3 mx-auto " alt="...">
           <div class="card-body ms-3">
@@ -40,7 +58,20 @@ const displayMobile = phones => {
      
       
     })
-    const utton = document.createElement('button')
+    
+
+const showMoreButtonDiv = document.createElement('div');
+showMoreButtonDiv.classList.add('show-more')
+     showMoreButtonDiv.innerHTML =`
+     <div class=" " >
+
+     <button class=" btn btn-outline-secondary text-center">Show More</button>
+     </div>
+    
+     `
+     div.appendChild(showMoreButtonDiv);
+     
+
 }
 
 
@@ -57,16 +88,16 @@ const displayPhoneDetails = phone => {
   const features =phone.mainFeatures;
  
   const sensor = features.sensors;
-  const modalDiv =document.getElementById('modal-js')
-  
- modalDiv.textContent='';
+
+  // player details div value 
+    modalDiv.textContent='';
  
-  const newModalDiv =document.createElement('div')
-  newModalDiv.innerHTML='';
+ 
+ 
   newModalDiv.classList.add('phone-details')
   
   newModalDiv.innerHTML=
-  ` <div class="row d-flex  align-items-center   bg-dark shadow-lg text-white ">
+  ` <div class="row  d-flex  align-items-center   bg-dark shadow-lg text-white ">
               <div class="col-5 ">
                <h4 class="card-title ms-4"> ${phone.brand}    ${phone.name }</h4>
                <hr>
@@ -112,13 +143,9 @@ const displayPhoneDetails = phone => {
 `
 
 modalDiv.appendChild(newModalDiv);
+div.textContent='';
  
-  
-   
- 
-
- 
-}                
+  }                
               
               
                 
