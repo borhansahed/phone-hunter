@@ -13,11 +13,14 @@
   const phoneDetailsFooter =document.createElement('footer');
 
 //  search result finding error
+const results= document.getElementById('results');
 
-
-const displayFoundingResults = results => {
-  const searchFoundoingResults = document.getElementById('results').style.display=results;
+const displayFoundingResults = result => {
+  results.style.display=result;
 }
+// result founding number 
+const result= document.getElementById('result');
+
 
 
 
@@ -38,17 +41,39 @@ const url = `https://openapi.programming-hero.com/api/phones?search=${searchText
 
 fetch(url)
 .then(res => res.json())
-.then(data => displayMobile(data.data.slice(0,20)))
+.then(data => displayMobile(data.data))
 }
+
+
 const displayMobile = phones => {
+ const phoneItems =phones.slice(0,20)
+ console.log(phoneItems.length);
  
- if(!phones[0]){
-  return displayFoundingResults('block');
+
+ 
+ if(!phoneItems[0]){
+ 
+  result.innerText="";
+  return displayFoundingResults('block')
+
 }
-   displayFoundingResults('none')
+
+
+ 
+  
    
-    phones.forEach(items => {
-      
+    phoneItems.forEach(items => {
+    
+    //  if(!items.phone_name || !items.brand){
+       
+    //  }
+     
+
+     displayFoundingResults('none')
+    if(items){
+      result.innerHTML=` <h4  class="text-white text-center ">${phoneItems.length} results found</h4>`;
+    }
+    
         const CardDiv = document.createElement('div')
         CardDiv.classList.add('phone-card')
         CardDiv.innerHTML=`
@@ -68,7 +93,10 @@ const displayMobile = phones => {
      
       
     })
+   
+  }
     
+ 
 
 // const showMoreButtonDiv = document.createElement('div');
 // showMoreButtonDiv.classList.add('show-more')
@@ -95,7 +123,7 @@ const displayMobile = phones => {
 //      div.appendChild(footer);
      
 
-}
+
 
 
 const searchPhoneDetails = id => {
@@ -111,7 +139,11 @@ const displayPhoneDetails = phone => {
   const features =phone.mainFeatures;
  
   const sensor = features.sensors;
+//  for(const sensorItems of sensor)
+//  console.log(sensorItems);
 
+
+ 
   // player details div value 
     modalDiv.textContent='';
  
@@ -147,7 +179,7 @@ const displayPhoneDetails = phone => {
                  <p><span>.Chipset</span> : ${features.chipSet} </p>
                  <p><span>.DisplaySize :</span> ${features.displaySize}</p>
                  <p><span>.Memory :</span> ${features.memory}</p>
-                 <p><span>.Sensors</span> : ${features.sensors}</p>
+                 <p><span>.Sensors</span> : ${sensor}</p>
                  <p><span>.Bluetooh</span> : ${phone.others?.Bluetooth ?phone.others.Bluetooth:'No'}</p>
                  <p><span>.GPS</span> : ${phone.others?.GPS ?phone.others.GPS:'No' }</p>
                  <p><span>.USB</span> : ${phone.others?.USB ?phone.others.USB:'No'}</p>
@@ -175,7 +207,7 @@ phoneDetailsFooter.innerHTML =`
 
 `
 modalDiv.appendChild(phoneDetailsFooter)
-
+result.innerText="";
 div.textContent='';
  
   }                
