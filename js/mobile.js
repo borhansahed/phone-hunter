@@ -47,20 +47,26 @@ fetch(url)
 
 const displayMobile = phones => {
  const phoneItems =phones.slice(0,20)
- console.log(phoneItems.length);
+ console.log(phoneItems);
  
 
  
- if(!phoneItems[0]){
+ if( phoneItems.length <=0){
+   
+    result.innerText="";
+    return displayFoundingResults('block')
+  
+  
  
-  result.innerText="";
-  return displayFoundingResults('block')
+  // result.innerText="";
+  // return displayFoundingResults('block')
 
 }
 
-
+// if(){
  
-  
+//     return displayFoundingResults('block')--
+//    }
    
     phoneItems.forEach(items => {
     
